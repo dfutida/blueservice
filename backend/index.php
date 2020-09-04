@@ -132,35 +132,9 @@
             echo "</tbody>";                            
             echo "</table>";
             echo "</form>";
-    }    
-/*
-    function selecionaCategoriaById($cod_categoria) {
+    }
 
-        try {
-            $database = new Conexao();
-            $db = $database->abreConexao();
 
-            $res = $db->query("SELECT * from categoria");
-            
-            echo "<select name='cod_categoria' class='form-group'>";
-            echo "<option value='0'>Selecione</option>";
-
-            while ($linha = $res->fetch(PDO::FETCH_ASSOC)) {
-                if($linha['cod_categoria'] == $cod_categoria) {
-                    echo "<option selected value=" . $linha['cod_categoria'] . ">" . $linha['descricao'] . "</td>";
-                } else {
-                    echo "<option value=" . $linha['cod_categoria'] . ">" . $linha['descricao'] . "</td>";
-                }
-            }
-            echo "</select>";
-
-            $database->fechaConexao();
-
-        } catch (PDOException $e) {
-        echo "There is some problem in connection: " . $e->getMessage();
-        }
-    }    
-*/
     function busca() {
 
         try {
@@ -289,55 +263,7 @@
         echo "There is some problem in connection: " . $e->getMessage();
         }
     }
-    
-/*
-    function ComboCategoria() {
 
-        try {
-            $database = new Conexao();
-            $db = $database->abreConexao();
-
-            $res = $db->query("SELECT * from categoria");
-            
-            echo "<select name='cod_categoria' class='form-group'>";
-            echo "<option selected value='0'>Selecione</option>";
-
-            while ($linha = $res->fetch(PDO::FETCH_ASSOC)) {
-                echo "<option value=" . $linha['cod_categoria'] . ">" . $linha['descricao'] . "</td>";
-            }
-            echo "</select>";
-
-            $database->fechaConexao();
-
-        } catch (PDOException $e) {
-        echo "There is some problem in connection: " . $e->getMessage();
-        }
-    }
-*/
-/*
-function comboProduto() {
-
-    try {
-        $database = new Conexao();
-        $db = $database->abreConexao();
-
-        $res = $db->query("SELECT * from Produto");
-        
-        echo "<select name='select_cod_produto' class='form-group'>";
-        echo "<option selected value='0'>Selecione</option>";
-
-        while ($linha = $res->fetch(PDO::FETCH_ASSOC)) {
-            echo "<option value=" . $linha['cod_produto'] . ">" . $linha['nome'] . "</td>";
-        }
-        echo "</select>";
-
-        $database->fechaConexao();
-
-    } catch (PDOException $e) {
-    echo "There is some problem in connection: " . $e->getMessage();
-    }
-}
-*/
     function insere() {
 
         $total = $stm = "";
@@ -420,63 +346,6 @@ function comboProduto() {
         }
     }
 
-/*
-    function insereRelacao() {
-
-        try {
-            $database = new Conexao();
-            $db = $database->abreConexao();
-
-            // inserting data into create table using prepare statement to prevent from sql injections
-            $stm = $db->prepare("INSERT INTO Relacao (cod_produto, cod_categoria) VALUES ( :cod_produto, :cod_categoria)");
-
-            // inserting a record
-            $stm->execute(array(':cod_produto' => $_POST['cod_produto'], ':cod_categoria' => $_POST['cod_categoria']));
-
-            //echo "New record created successfully";
-            //header("location: createCat.php");
-            //exit();
-
-            $database->fechaConexao();
-
-        } catch (PDOException $e) {
-            echo "There is some problem in connection: " . $e->getMessage();
-        }
-    }
-*/
-/*
-    function atualiza() {
-
-        try {
-                $database = new Conexao();
-                $db = $database->abreConexao();
-                 // Prepare an update statement
-                $sql = "UPDATE produto SET descricao=:descricao, cod_categoria=:cod_categoria WHERE cod_produto=:cod_produto";
-                if($stmt = $db->prepare($sql)){
-                    // Bind variables to the prepared statement as parameters
-                    $stmt->bindParam(":descricao", $param_descricao);
-                    $stmt->bindParam(":cod_categoria", $param_cod_categoria);
-                    $stmt->bindParam(":cod_produto", $param_cod_produto);
-
-                    // Set parameters
-                    $param_descricao = $_POST['descricao'];
-                    $param_cod_categoria = $_POST['cod_categoria'];
-                    $param_cod_produto = $_GET['cod_produto'];
-
-                    // Attempt to execute the prepared statement
-                    if($stmt->execute()){
-                        // Records updated successfully. Redirect to landing page
-                        header("location: index.php");
-                        exit();
-                    } else{
-                        echo "Something went wrong. Please try again later.";
-                    }
-                }
-        } catch (PDOException $e) {
-            echo "There is some problem in connection: " . $e->getMessage();
-        }
-    }
-  */  
     function selecionaPorId() {
 
         // Processing form data when form is submitted
@@ -532,39 +401,5 @@ function comboProduto() {
             }
         }
     }
-/*
-    function delete() {
- 
-        // Process delete operation after confirmation
-        if(isset($_POST["cod_produto"]) && !empty($_POST["cod_produto"])){
 
-            $cod_produto = $_POST['cod_produto'];
-
-            try {
-                $database = new Conexao();
-                $db = $database->abreConexao();
-
-                $stmt = $db->prepare('DELETE FROM produto WHERE cod_produto = :cod_produto');
-                $stmt->bindParam(':cod_produto', $cod_produto); 
-                $stmt->execute();
-                    
-                echo $stmt->rowCount(); 
-
-                $database->fechaConexao();
-
-                // Attempt to execute the prepared statement
-                if($stmt->execute()){
-                    // Records updated successfully. Redirect to landing page
-                    header("location: index.php");
-                    exit();
-                } else{
-                    echo "Something went wrong. Please try again later.";
-                }
-
-            } catch(PDOException $e) {
-                echo 'Error: ' . $e->getMessage();
-            }
-        }
-    }
-*/
 ?>

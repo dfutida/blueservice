@@ -1,7 +1,7 @@
-//Criar banco de dados no MySQL <br>
+//Criar banco de dados no MySQL (phpmyadmin) <br>
 CREATE DATABASE blueservice;<br><br>
 
-//Criar tabela no MySQL<br>
+//Criar tabela no MySQL (phpmyadmin)<br>
 CREATE TABLE IF NOT EXISTS Produto (<br>
     cod_produto int(11) NOT NULL AUTO_INCREMENT,<br>
     nome varchar(255),<br>
@@ -60,9 +60,10 @@ VALUES (<br>
 );<br>
 <br>
 
+// ==================================================
 1 - Descompactar o .ZIP na pasta wwww do servidor Apache<br><br>
 
 2 - Abrir e Configurar o arquivo em ../backend/conexao.php a conexao com Banco de dados:
 Server(localhost), User(root), Password (pass), porta do MySQL(port=3306), nome do banco de dados(dbname=blueservice)<br><br>
 
-3 - Verificar pedidos finalizados do carrinho de compras na tabela pedido(via phpmyadmin, por exemplo).
+3 - Verificar pedidos finalizados do carrinho de compras na tabela pedido (phpmyadmin).
