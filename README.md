@@ -63,4 +63,4 @@ VALUES (<br>
 1 - Descompactar o .ZIP na pasta wwww do servidor Apache<br><br>
 
 2 - Abrir e Configurar o arquivo em ../backend/conexao.php a conexao com Banco de dados:
-Server, User, Password (pass)<br><br>
+Server(host), User, Password (pass), porta do MySQL(port), nome do banco de dados(dbname)<br><br>
