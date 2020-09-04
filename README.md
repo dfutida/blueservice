@@ -65,4 +65,4 @@ VALUES (<br>
 2 - Abrir e Configurar o arquivo em ../backend/conexao.php a conexao com Banco de dados:
 Server(localhost), User(root), Password (pass), porta do MySQL(port=3306), nome do banco de dados(dbname=blueservice)<br><br>
 
-3 - Verificar pedidos finalizados do carrinho de compras na tabela pedido.
+3 - Verificar pedidos finalizados do carrinho de compras na tabela pedido(via phpmyadmin, por exemplo).
