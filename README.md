@@ -60,7 +60,7 @@ VALUES (<br>
 );<br>
 <br>
 
-// ==================================================
+// ==================================================<br>
 1 - Descompactar o .ZIP na pasta wwww do servidor Apache<br><br>
 
 2 - Abrir e Configurar o arquivo em ../backend/conexao.php a conexao com Banco de dados:
