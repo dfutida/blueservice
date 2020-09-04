@@ -61,9 +61,12 @@ VALUES (<br>
 <br>
 
 // ==================================================<br>
-1 - Descompactar o .ZIP na pasta wwww do servidor Apache<br><br>
+1 - Descompactar o .ZIP na pasta wwww do servidor Apache e renomear a pasta raiz para blueservice apenas<br><br>
 
 2 - Abrir e Configurar o arquivo em ../backend/conexao.php a conexao com Banco de dados:
 Server(localhost), User(root), Password (pass), porta do MySQL(port=3306), nome do banco de dados(dbname=blueservice)<br><br>
 
-3 - Verificar pedidos finalizados do carrinho de compras na tabela pedido (phpmyadmin).
+3 - Acessar no navegador página inicial (Chrome) http://localhost:8181/blueservice/frontend/index.php (as vezes funciona sem a porta 8181)<br><br>
+
+4 - Verificar pedidos finalizados do carrinho de compras na tabela pedido (phpmyadmin).<br><br>
+// ==================================================<br>
